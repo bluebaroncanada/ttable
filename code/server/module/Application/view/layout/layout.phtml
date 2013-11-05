@@ -1,0 +1,64 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <?php echo $this->headTitle('UWOTTable Group 4')->setSeparator(' - ')->setAutoEscape(false) ?>
+
+ <?php echo $this->headMeta()
+  ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+  ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+ ?>
+
+ <!-- Le styles -->
+ <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+  ->prependStylesheet($this->basePath() . '/css/style.css')
+  ->prependStylesheet($this->basePath() . '/css/bootstrap-theme.css')
+  ->prependStylesheet($this->basePath() . '/css/bootstrap.css'); ?>
+
+ <!-- Scripts -->
+ <?php echo $this->headScript()
+  ->prependFile($this->basePath() . '/js/bootstrap.min.js')
+  ->prependFile($this->basePath() . '/js/jquery.min.js')
+  ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+  ->prependFile($this->basePath() . '/js/html5shiv.js', 'text/javascript', array('conditional' => 'lt IE 9',)); ?>
+
+</head>
+<body>
+
+<div id="main" class="container">
+
+
+ <nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">Group 4</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+   <ul class="nav navbar-nav">
+    <li class="active"><a href="/">Home</a></li>
+   </ul>
+  </div><!-- /.navbar-collapse -->
+ </nav>
+
+ <div id="content">
+
+  <?php echo $this->content; ?>
+
+ </div>
+
+ <hr style="margin-bottom: 5px;">
+ <footer>
+  <p>&copy; <?php echo date('Y') ?> by Group 4 <?php echo $this->translate('All rights reserved.') ?></p>
+ </footer>
+</div>
+
+
+<!-- /container -->
+<?php echo $this->inlineScript() ?>
+
+
+</body>
+</html>

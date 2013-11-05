@@ -1,0 +1,38 @@
+<?php
+
+/** @var \Facebook $facebook */
+$facebook = $this->facebook;
+
+$fb_uid = $facebook->getUser();
+
+if ($fb_uid == 0) {
+ $login_url = $facebook->getLoginUrl();
+ echo "<script type='text/javascript'>top.location.href = '$login_url';</script>";
+ return;
+}
+
+
+
+$fb_login = $this->fb_login;
+
+$user_profile = $this->user_profile;
+?>
+
+
+<div style="text-align: center">
+ <div id="intro">
+  <img onclick="window.open('<?php echo $user_profile['link']; ?>', '_blank')" src="https://graph.facebook.com/<?php echo $user_profile['id']; ?>/picture">
+
+  <h1>Welcome, <?php echo $user_profile['first_name']; ?>!</h1>
+  <br/>
+
+
+  <applet code="gui.TTApplet.class" width=802, height=600 codebase="https://jbaron6.cs2212.ca/ttableapplet/frank" archive="json-simple-1.1.1.jar"></applet>
+  
+
+ </div>
+
+
+</div>
+
+<a href="https://jbaron6.cs2212.ca/test"><h3>Test Project</h3></a>
